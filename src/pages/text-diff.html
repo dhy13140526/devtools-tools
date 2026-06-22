@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base64编解码器 - devtools-tools</title>
-    <meta name="description" content="用于数据传输和存储的Base64编码/解码。">
+    <title>文本对比器 - devtools-tools</title>
+    <meta name="description" content="在线文本对比工具，快速比较两段文本的差异。">
     <link rel="stylesheet" href="/styles/global.css">
 </head>
 <body>
@@ -32,45 +32,35 @@
     </header>
 
     <main class="main">
-        <div class="tool-container">
-            <div class="tool-header">
-                <h1>Base64编解码器</h1>
-                <p>用于数据传输和存储的Base64编码/解码。</p>
-            </div>
+        <div class="container">
+            <div class="tool-container">
+                <div class="tool-header">
+                    <h1>文本对比器</h1>
+                    <p>快速比较两段文本的差异，逐行对比。</p>
+                </div>
 
-            <div class="form-group">
-                <label for="mode">模式</label>
-                <select id="mode" class="form-control">
-                    <option value="encode">编码（文本 → Base64）</option>
-                    <option value="decode">解码（Base64 → 文本）</option>
-                </select>
-            </div>
+                <div class="diff-output">
+                    <div class="form-group">
+                        <label>原文</label>
+                        <textarea id="text-left" class="form-control" rows="10" placeholder="输入原始文本..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>修改后</label>
+                        <textarea id="text-right" class="form-control" rows="10" placeholder="输入修改后的文本..."></textarea>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label for="input-text">输入文本</label>
-                <textarea 
-                    id="input-text" 
-                    placeholder="输入要编码的文本或Base64要解码的内容..."
-                    rows="8"
-                ></textarea>
-            </div>
+                <div class="button-group" style="margin-bottom: 20px;">
+                    <button id="compare-btn" class="button primary">对比</button>
+                    <button id="clear-btn" class="button secondary">清除</button>
+                </div>
 
-            <div class="form-group">
-                <button id="convert-btn" class="button">转换</button>
-                <button id="copy-output-btn" class="button secondary">复制输出</button>
-                <button id="clear-btn" class="button secondary">清除</button>
-            </div>
+                <div id="alert-container"></div>
 
-            <div id="alert-container"></div>
-
-            <div class="form-group">
-                <label for="output-text">输出</label>
-                <textarea 
-                    id="output-text" 
-                    placeholder="结果将显示在这里..."
-                    rows="8"
-                    readonly
-                ></textarea>
+                <div class="form-group">
+                    <label>差异结果</label>
+                    <textarea id="diff-result" class="form-control" rows="12" readonly placeholder="点击"对比"查看差异..."></textarea>
+                </div>
             </div>
         </div>
     </main>

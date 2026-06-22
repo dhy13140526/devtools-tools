@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base64编解码器 - devtools-tools</title>
-    <meta name="description" content="用于数据传输和存储的Base64编码/解码。">
+    <title>正则测试器 - devtools-tools</title>
+    <meta name="description" content="在线正则表达式测试，实时匹配结果展示，支持多种标志。">
     <link rel="stylesheet" href="/styles/global.css">
 </head>
 <body>
@@ -32,45 +32,38 @@
     </header>
 
     <main class="main">
-        <div class="tool-container">
-            <div class="tool-header">
-                <h1>Base64编解码器</h1>
-                <p>用于数据传输和存储的Base64编码/解码。</p>
-            </div>
+        <div class="container">
+            <div class="tool-container">
+                <div class="tool-header">
+                    <h1>正则测试器</h1>
+                    <p>在线正则表达式测试，实时匹配结果展示。</p>
+                </div>
 
-            <div class="form-group">
-                <label for="mode">模式</label>
-                <select id="mode" class="form-control">
-                    <option value="encode">编码（文本 → Base64）</option>
-                    <option value="decode">解码（Base64 → 文本）</option>
-                </select>
-            </div>
+                <div class="form-group">
+                    <label>正则表达式</label>
+                    <input type="text" id="regex-pattern" class="form-control" placeholder="例：\d{4}-\d{2}-\d{2}">
+                </div>
 
-            <div class="form-group">
-                <label for="input-text">输入文本</label>
-                <textarea 
-                    id="input-text" 
-                    placeholder="输入要编码的文本或Base64要解码的内容..."
-                    rows="8"
-                ></textarea>
-            </div>
+                <div class="form-group">
+                    <label>标志</label>
+                    <div class="regex-flags">
+                        <label><input type="checkbox" id="flag-g"> 全局 (g)</label>
+                        <label><input type="checkbox" id="flag-i"> 忽略大小写 (i)</label>
+                        <label><input type="checkbox" id="flag-m"> 多行 (m)</label>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <button id="convert-btn" class="button">转换</button>
-                <button id="copy-output-btn" class="button secondary">复制输出</button>
-                <button id="clear-btn" class="button secondary">清除</button>
-            </div>
+                <div class="form-group">
+                    <label>测试文本</label>
+                    <textarea id="test-text" class="form-control" rows="8" placeholder="输入要匹配的文本..."></textarea>
+                </div>
 
-            <div id="alert-container"></div>
+                <div id="alert-container"></div>
 
-            <div class="form-group">
-                <label for="output-text">输出</label>
-                <textarea 
-                    id="output-text" 
-                    placeholder="结果将显示在这里..."
-                    rows="8"
-                    readonly
-                ></textarea>
+                <div class="form-group">
+                    <label>匹配结果</label>
+                    <textarea id="match-result" class="form-control" rows="6" readonly placeholder="匹配结果将显示在这里..."></textarea>
+                </div>
             </div>
         </div>
     </main>
