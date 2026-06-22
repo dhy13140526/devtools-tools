@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>颜色转换器 - devtools-tools</title>
-    <meta name="description" content="在线颜色格式转换，支持HEX、RGB、HSL之间的互相转换。">
+    <title>Markdown编辑器 - devtools-tools</title>
+    <meta name="description" content="在线Markdown编辑器，实时预览渲染效果，支持标题、粗斜体、列表、代码块等。">
     <link rel="stylesheet" href="/styles/global.css">
 </head>
 <body>
@@ -38,30 +38,35 @@
 
     <main class="main">
         <div class="container">
-            <div class="tool-container">
+            <div class="tool-container" style="max-width:960px;">
                 <div class="tool-header">
-                    <h1>颜色转换器</h1>
-                    <p>在线颜色格式转换，支持HEX、RGB、HSL之间的互相转换。</p>
+                    <h1>Markdown编辑器</h1>
+                    <p>左侧编写，右侧实时预览，支持标题、粗斜体、链接、图片、列表、代码块。</p>
                 </div>
 
-                <div id="color-preview" class="color-preview" style="background: #6366f1;"></div>
-
-                <div class="form-group">
-                    <label>HEX</label>
-                    <input type="text" id="hex-input" class="form-control" value="#6366f1" placeholder="#ffffff">
-                </div>
-
-                <div class="form-group">
-                    <label>RGB</label>
-                    <input type="text" id="rgb-input" class="form-control" value="99, 102, 241" placeholder="255, 255, 255">
-                </div>
-
-                <div class="form-group">
-                    <label>HSL</label>
-                    <input type="text" id="hsl-input" class="form-control" value="239, 84%, 67%" placeholder="0, 0%, 100%">
+                <div class="button-group" style="margin-bottom:16px;">
+                    <button id="load-sample-btn" class="button secondary">加载示例</button>
+                    <button id="clear-btn" class="button secondary">清除</button>
                 </div>
 
                 <div id="alert-container"></div>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+                    <div class="form-group" style="margin:0;">
+                        <label>Markdown</label>
+                        <textarea id="md-input" class="form-control" rows="20" placeholder="在此输入 Markdown..." style="min-height:400px;font-size:13px;"></textarea>
+                    </div>
+                    <div class="form-group" style="margin:0;">
+                        <label>预览</label>
+                        <div id="md-preview" class="form-control" style="min-height:400px;overflow:auto;background:var(--surface);cursor:default;font-family:'Georgia','Noto Serif SC',serif;line-height:1.8;font-size:15px;color:var(--text);">
+                            <p style="color:var(--text-muted);padding:20px;text-align:center;">输入 Markdown 后实时预览</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex;justify-content:flex-end;margin-top:12px;">
+                    <button id="copy-html-btn" class="button secondary" style="font-size:12px;">复制 HTML</button>
+                </div>
             </div>
         </div>
     </main>
@@ -69,9 +74,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 devtools-tools。所有工具都在浏览器中运行，确保隐私安全。</p>
-            <p>
-                <a href="https://github.com/dhy13140526/devtools-tools" target="_blank">GitHub</a>
-            </p>
+            <p><a href="https://github.com/dhy13140526/devtools-tools" target="_blank">GitHub</a></p>
         </div>
     </footer>
 

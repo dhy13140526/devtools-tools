@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文本对比器 - devtools-tools</title>
-    <meta name="description" content="在线文本对比工具，快速比较两段文本的差异。">
+    <title>进制转换器 - devtools-tools</title>
+    <meta name="description" content="在线进制转换，支持二进制、八进制、十进制、十六进制之间的互相转换。">
     <link rel="stylesheet" href="/styles/global.css">
 </head>
 <body>
@@ -40,31 +40,49 @@
         <div class="container">
             <div class="tool-container">
                 <div class="tool-header">
-                    <h1>文本对比器</h1>
-                    <p>快速比较两段文本的差异，逐行对比。</p>
+                    <h1>进制转换器</h1>
+                    <p>二进制、八进制、十进制、十六进制之间的互相转换。</p>
                 </div>
 
-                <div class="diff-output">
+                <div class="form-inline">
                     <div class="form-group">
-                        <label>原文</label>
-                        <textarea id="text-left" class="form-control" rows="10" placeholder="输入原始文本..."></textarea>
+                        <label>输入进制</label>
+                        <select id="from-base" class="form-control">
+                            <option value="2">二进制 (2)</option>
+                            <option value="8">八进制 (8)</option>
+                            <option value="10" selected>十进制 (10)</option>
+                            <option value="16">十六进制 (16)</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex:0 0 auto;padding-bottom:10px;">
+                        <button id="swap-btn" class="button secondary" style="padding:10px 14px;">⇄</button>
                     </div>
                     <div class="form-group">
-                        <label>修改后</label>
-                        <textarea id="text-right" class="form-control" rows="10" placeholder="输入修改后的文本..."></textarea>
+                        <label>输出进制</label>
+                        <select id="to-base" class="form-control">
+                            <option value="2">二进制 (2)</option>
+                            <option value="8">八进制 (8)</option>
+                            <option value="10">十进制 (10)</option>
+                            <option value="16" selected>十六进制 (16)</option>
+                        </select>
                     </div>
                 </div>
 
-                <div class="button-group" style="margin-bottom: 20px;">
-                    <button id="compare-btn" class="button primary">对比</button>
-                    <button id="clear-btn" class="button secondary">清除</button>
+                <div class="form-group">
+                    <label>输入值</label>
+                    <input type="text" id="input-value" class="form-control" placeholder="输入要转换的数字...">
                 </div>
 
                 <div id="alert-container"></div>
 
                 <div class="form-group">
-                    <label>差异结果</label>
-                    <textarea id="diff-result" class="form-control" rows="12" readonly placeholder="点击"对比"查看差异..."></textarea>
+                    <label>转换结果</label>
+                    <input type="text" id="output-value" class="form-control" readonly placeholder="转换结果将显示在这里..." style="font-family:monospace;font-size:16px;">
+                </div>
+
+                <div class="button-group">
+                    <button id="copy-btn" class="button secondary">复制结果</button>
+                    <button id="clear-btn" class="button secondary">清除</button>
                 </div>
             </div>
         </div>
@@ -73,9 +91,7 @@
     <footer class="footer">
         <div class="container">
             <p>&copy; 2026 devtools-tools。所有工具都在浏览器中运行，确保隐私安全。</p>
-            <p>
-                <a href="https://github.com/dhy13140526/devtools-tools" target="_blank">GitHub</a>
-            </p>
+            <p><a href="https://github.com/dhy13140526/devtools-tools" target="_blank">GitHub</a></p>
         </div>
     </footer>
 

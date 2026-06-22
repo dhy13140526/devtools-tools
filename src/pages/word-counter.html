@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符/单词计数 - devtools-tools</title>
+    <meta name="description" content="实时统计文本的字符数、单词数、行数和段落数。">
+    <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">devtools-tools</h1>
+            <nav class="nav">
+                <a href="/" class="nav-link">主页</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-btn">工具</button>
+                    <div class="nav-dropdown-content">
+                        <a href="/uuid-generator/">UUID生成器</a>
+                        <a href="/base64/">Base64编解码器</a>
+                        <a href="/timestamp/">时间戳转换器</a>
+                        <a href="/url-encoder/">URL编解码器</a>
+                        <a href="/json-formatter/">JSON格式化器/校验器</a>
+                        <a href="/password-generator/">密码生成器</a>
+                        <a href="/color-converter/">颜色转换器</a>
+                        <a href="/regex-tester/">正则测试器</a>
+                        <a href="/text-diff/">文本对比器</a>
+                        <a href="/html-encoder/">HTML实体编解码</a>
+                        <a href="/case-converter/">文本大小写转换</a>
+                        <a href="/word-counter/">字符/单词计数</a>
+                        <a href="/base-converter/">进制转换器</a>
+                        <a href="/markdown-editor/">Markdown编辑器</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="tool-container">
+                <div class="tool-header">
+                    <h1>字符/单词计数</h1>
+                    <p>实时统计文本的各种数据，输入即统计。</p>
+                </div>
+
+                <div class="form-group">
+                    <label>输入文本</label>
+                    <textarea id="input-text" class="form-control" rows="10" placeholder="输入文本，统计结果会实时显示..."></textarea>
+                </div>
+
+                <div id="alert-container"></div>
+
+                <div class="form-group">
+                    <label>统计结果</label>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;">
+                        <div class="stats-box">
+                            <div style="font-size:28px;font-weight:700;color:var(--text);" id="stat-chars">0</div>
+                            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">字符（含空格）</div>
+                        </div>
+                        <div class="stats-box">
+                            <div style="font-size:28px;font-weight:700;color:var(--text);" id="stat-chars-no-space">0</div>
+                            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">字符（不含空格）</div>
+                        </div>
+                        <div class="stats-box">
+                            <div style="font-size:28px;font-weight:700;color:var(--text);" id="stat-words">0</div>
+                            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">单词</div>
+                        </div>
+                        <div class="stats-box">
+                            <div style="font-size:28px;font-weight:700;color:var(--text);" id="stat-lines">0</div>
+                            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">行数</div>
+                        </div>
+                        <div class="stats-box">
+                            <div style="font-size:28px;font-weight:700;color:var(--text);" id="stat-paragraphs">0</div>
+                            <div style="font-size:11px;color:var(--text-muted);margin-top:4px;">段落</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 devtools-tools。所有工具都在浏览器中运行，确保隐私安全。</p>
+            <p><a href="https://github.com/dhy13140526/devtools-tools" target="_blank">GitHub</a></p>
+        </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
