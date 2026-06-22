@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UUID生成器 - devtools-tools</title>
+    <meta name="description" content="生成版本4的UUID，用于测试、开发或数据库键。">
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">devtools-tools</h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">主页</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-btn">工具</button>
+                    <div class="nav-dropdown-content">
+                        <a href="uuid-generator.html">UUID生成器</a>
+                        <a href="base64.html">Base64编解码器</a>
+                        <a href="timestamp.html">时间戳转换器</a>
+                        <a href="url-encoder.html">URL编解码器</a>
+                        <a href="json-formatter.html">JSON格式化器/校验器</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>UUID生成器</h1>
+                <p>生成版本4的UUID，用于测试、开发或数据库键。</p>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">生成UUID数量</label>
+                <input 
+                    type="number" 
+                    id="quantity" 
+                    value="1" 
+                    min="1" 
+                    max="100"
+                    class="form-control"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="input-uuids">已有的UUID（每行一个）</label>
+                <textarea 
+                    id="input-uuids" 
+                    placeholder="00000000-0000-4000-8000-000000000000
+00000000-0000-4000-8000-000000000001
+00000000-0000-4000-8000-000000000002"
+                    rows="5"
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <button id="generate-btn" class="button">生成UUID</button>
+                <button id="copy-all-btn" class="button secondary">复制全部</button>
+            </div>
+
+            <div id="alert-container"></div>
+
+            <div class="form-group">
+                <label for="output-uuids">生成的UUID</label>
+                <textarea 
+                    id="output-uuids" 
+                    placeholder="UUID将显示在这里..."
+                    rows="10"
+                    readonly
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <button id="clear-btn" class="button secondary">清除</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 devtools-tools。所有工具都在浏览器中运行，确保隐私安全。</p>
+            <p>
+                <a href="https://github.com/yourusername/devtools-tools" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

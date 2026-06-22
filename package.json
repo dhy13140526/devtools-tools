@@ -1,0 +1,26 @@
+{
+  "name": "devtools-tools",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "@astrojs/sitemap": "^3.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "prettier": "^3.2.5"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Free online developer tools for JSON formatting, Base64 encoding, UUID generation, timestamp conversion, URL encoding, and more."
+}
